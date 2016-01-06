@@ -1,0 +1,12 @@
+***Begin monitoring DiskArbitration activity
+***DiskAppeared ('disk2s1', DAVolumePath = 'file:///Volumes/ZENUSB2/', DAVolumeKind = 'exfat', DAVolumeName = 'ZENUSB2') Time=20151229-19:24:20.4589
+***DiskAppeared ('disk2', DAVolumePath = '<null>', DAVolumeKind = '<null>', DAVolumeName = '<null>') Time=20151229-19:24:20.4599
+***DiskAppeared ((no BSD name), DAVolumePath = 'file:///home/', DAVolumeKind = 'autofs', DAVolumeName = '<null>') Time=20151229-19:24:20.4601
+***DiskAppeared ((no BSD name), DAVolumePath = 'file:///net/', DAVolumeKind = 'autofs', DAVolumeName = '<null>') Time=20151229-19:24:20.4602
+***DiskAppeared ('disk0', DAVolumePath = '<null>', DAVolumeKind = '<null>', DAVolumeName = '<null>') Time=20151229-19:24:20.4603
+***DiskAppeared ('disk0s1', DAVolumePath = '<null>', DAVolumeKind = 'msdos', DAVolumeName = 'EFI') Time=20151229-19:24:20.4604
+***DiskAppeared ('disk0s2', DAVolumePath = '<null>', DAVolumeKind = '<null>', DAVolumeName = '<null>') Time=20151229-19:24:20.4605
+***DiskAppeared ('disk0s3', DAVolumePath = '<null>', DAVolumeKind = 'hfs', DAVolumeName = 'Recovery HD') Time=20151229-19:24:20.4607
+***DiskAppeared ('disk0s4', DAVolumePath = 'file:///Volumes/DATA/', DAVolumeKind = 'hfs', DAVolumeName = 'DATA') Time=20151229-19:24:20.4608
+***DiskAppeared ('disk1', DAVolumePath = 'file:///', DAVolumeKind = 'hfs', DAVolumeName = 'Macintosh HD') Time=20151229-19:24:20.4609
+***DAIdle (no DADiskRef) Time=20151229-19:24:20.4610

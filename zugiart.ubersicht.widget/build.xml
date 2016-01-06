@@ -1,0 +1,38 @@
+<project name="zugiart.ubersicht.widget" default="deploy" basedir=".">
+	<description>
+    Buildfile for zugiart Ubersicht widget
+  </description>
+
+	<!-- Binds env variable to 'env' -->
+	<property environment="env" />
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="dist" location="/Users/${env.USER}/Library/Application Support/Übersicht/widgets/ZENOSX.widget" />
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<echo message="OS User: ${env.USER}" />
+
+	</target>
+
+	<target name="deploy" depends="init" description="generate the distribution">
+
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+		<echo message="Deploying to ${dist}" />
+		<!-- Copying file -->
+		<copy todir="${dist}">
+			<fileset dir="${src}" />
+		</copy>
+	</target>
+
+	<target name="fullDeploy">
+		<echo message="Running FULL deploy, removing ${dist}" />
+		<delete includeemptydirs="true">
+			<fileset dir="${dist}" includes="**/*" />
+		</delete>
+		<antcall target="deploy" />
+	</target>
+
+</project>
