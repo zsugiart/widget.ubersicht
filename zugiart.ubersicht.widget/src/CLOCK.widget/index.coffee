@@ -24,4 +24,8 @@ style: """
     border-bottom: 3px solid rgba(#fff, 0.3)
     border-radius: 1px
 
+  .subtime
+    float:left
+    padding-right: 15px
+
   """

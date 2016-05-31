@@ -41,8 +41,7 @@ def DiskListener(fileToTouch):
     while p.poll() is None:
         data = p.stdout.readline()
         if "/Volumes/" in data:
-            ZENOSX.log_debug(data.strip())
-            
+            ZENOSX.log_info(data.strip())
             time.sleep(3)
             ZENOSX.ubersicht_touch(fileToTouch)
 

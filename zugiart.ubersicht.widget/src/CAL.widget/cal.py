@@ -67,6 +67,7 @@ def parseHoliday(filePath):
     f = open(filePath)
     holSet={}
     for line in f:
+        if '#' in line[0:5]: continue # ignore comments
         rec=line.strip().split(",")
         ZENOSX.log_debug("parsing holiday: %s" % rec)
         # check to see if date format is OK?

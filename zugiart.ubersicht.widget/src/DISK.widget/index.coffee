@@ -18,27 +18,28 @@ refreshFrequency: 10800000
 ## CSS STYLE
 ## ====================================================================================
 
-style: """
-  bottom: 40px
+style: style: """
+  bottom: 0px
   left: 30px
   width: 500px
+  height: 80px
   color: #fff
 
   .widgetLabel
+    float:left
     font: 15pt normal "Helvetica Neue"
     text-shadow: 0 0 1px rgba(#000, 0.5)
     font-weight: 100
     letter-spacing: 2px
-    float:left
     width: 80px
     color: #fff
 
   .widgetControl
-    float:left
+    margin-left: 80px
 
   .c_barWrapper
     width:100px
-    margin: 3px 30px 15px 0px
+    margin: 3px 30px 7px 0px
     float:left
 
   .c_barBg
@@ -54,15 +55,16 @@ style: """
 
   .c_val
     font: 8pt normal "Helvetica Neue"
-	text-transform: lowercase
-    padding-top: 3px
+    padding-top: 2px
   
   .c_val .label
     float:left
+    text-transform: lowercase
     padding-right: 10px
+    z-index: 1000
   
   .c_val .value
-    float: right
+    text-align: right
 
 """
 

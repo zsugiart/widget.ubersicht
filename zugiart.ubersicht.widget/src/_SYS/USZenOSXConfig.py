@@ -6,6 +6,7 @@ import datetime
 import subprocess
 import sys
 import traceback
+import pickle
 
 #
 #======================================================================================================
@@ -14,7 +15,7 @@ import traceback
 
 def configLogger():
     loggerObj = logging.getLogger("")
-    logfile = os.path.join(os.environ["US_ZENOSX_DIR"],'_LOG/ubersicht-ZENOSX.log')
+    logfile = os.path.join(os.environ["US_ZENOSX_DIR"],'_TMP/ubersicht-ZENOSX.log')
     lh = logging.handlers.RotatingFileHandler(logfile, 
          maxBytes=10*1024,backupCount=0)
     lh.setFormatter(logging.Formatter('%(asctime)s | %(levelname)7s | %(message)s'))
@@ -22,7 +23,9 @@ def configLogger():
     return loggerObj
 
 _ZLOGGER = configLogger()
-_ZLOGGER.setLevel(logging.DEBUG)
+
+# DEBUG LEVEL
+_ZLOGGER.setLevel(logging.INFO)
 
 class ZENOSX:
     
@@ -41,7 +44,7 @@ class ZENOSX:
     
     @staticmethod
     def checkPID():
-        pidFname = os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_LOG/%s__PID__" % ZENOSX.getName())
+        pidFname = os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_TMP/%s__PID__" % ZENOSX.getName())
         # a file is leftover, kill pid and remove it first
         if os.path.isfile(pidFname):
             f = open(pidFname)
@@ -56,6 +59,14 @@ class ZENOSX:
         f = open (pidFname,'a') # (re)open file
         f.write("%s\n"%os.getpid()) # write the pID of this process
         f.close() 
+        
+    @staticmethod
+    def pickleWrite(filename, dictObj):
+        pickle.dump(dictObj,open(os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_TMP/%s.pickle" % filename),"wb"))
+    
+    @staticmethod
+    def pickleRead(filename):
+        return pickle.load( open( os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_TMP/%s.pickle" % filename),"rb"))
     
     @staticmethod 
     def log_info(msg): _ZLOGGER.info("%10s | %s " % (ZENOSX.getName(),msg))
@@ -84,12 +95,14 @@ class ZENOSX:
         ZENOSX.log_warn("received signal %s" %signum)
         ZENOSX.getTheFuckOut()
     
+    
+    # If this method is called, will get the f out. :)
     @staticmethod
     def getTheFuckOut():
         ZENOSX.log_info("Termination: cleaning  up resources...")
         try:
-            ZENOSX.log_debug("removing PID file %s " % os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_LOG/__PID__"))
-            os.remove(os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"__PID__"))
+            ZENOSX.log_debug("removing PID file %s " % os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"_TMP/%s__PID__"%ZENOSX.getName()))
+            os.remove(os.path.join(ZENOSX.getConfig("US_ZENOSX_DIR"),"%s__PID__"%ZENOSX.getName()))
         except:
             ZENOSX.log_error("ERROR: %s" % traceback.format_exc())
             pass
@@ -103,9 +116,4 @@ class ZENOSX:
     
 signal.signal(signal.SIGTERM, ZENOSX.signalHandler)
 signal.signal(signal.SIGINT, ZENOSX.signalHandler)
-
-# Log setup
-
-logging.info("Config initialized.")
-logging.info("DIR: %s" % os.environ["US_ZENOSX_DIR"])
 
