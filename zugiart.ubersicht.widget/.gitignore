@@ -1,4 +1,4 @@
 .project
-**/.DS_Store
+.DS_Store
 **/_LOG/**
 **/*.pyc
