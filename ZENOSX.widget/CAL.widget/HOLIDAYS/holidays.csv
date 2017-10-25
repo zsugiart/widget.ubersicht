@@ -1,0 +1,50 @@
+# Add your holidays/off-days in the format of DATE(YYYY-MM-DD),Description
+# Note that Date must be entered with MM (leading zero for 01),
+# Hint, the file can be added/modified by scripts or humans :)
+# DATE,DESCRIPTION
+
+# JAPAN 2017
+2017-01-01,New Year's Day
+2017-01-02,New Year's Day
+2017-01-03,NRJ Holiday
+2017-01-04,NRJ Holiday
+2017-01-09,Coming of Age Day
+2017-02-11,National Foundation Day
+2017-03-20,Spring Equinox Day
+2017-04-29,Showa Day
+2017-05-03,Constitution Memorial Day
+2017-05-04,Greenery Day
+2017-05-05,Children's Day
+2017-07-17,Marine Day
+2017-08-11,Mountain Day
+2017-09-18,Respect for the Aged Day
+2017-09-23,Autumn Equinox Day
+2017-10-09,Sports Day
+2017-11-03,Culture Day
+2017-11-23,Labor Thanksgiving Day
+2017-12-23,Emperor's Birthday
+2017-12-25,NRJ Holiday
+2017-12-29,NRJ Holiday
+2017-12-30,NRJ Holiday
+
+# Japan 2018
+2018-01-01,New Year's Day
+2018-01-08,Coming of Age Day
+2018-02-11,National Foundation Day
+2018-02-12,Spring Equinox Day
+2018-03-21,Showa Day
+2018-04-29,Showa Day
+2018-04-30,Shōwa Day observed
+2018-05-03,Constitution Memorial Day
+2018-05-04,Greenery Day
+2018-05-05,Children's Day
+2018-07-16,Marine Day
+2018-08-11,Mountain Day
+2018-09-17,Respect for the Aged Day
+2018-09-23,Autumn Equinox Day
+2018-09-24,Autumn Equinox observed
+2018-10-08,Sports Day
+2018-11-03,Culture Day
+2018-11-23,Labor Thanksgiving Day
+2018-12-23,Emperor's Birthday
+2018-12-24,Emperor's Birthday observed
