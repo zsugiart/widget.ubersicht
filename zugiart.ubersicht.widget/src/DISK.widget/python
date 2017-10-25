@@ -1,5 +1,0 @@
-Usage:  diskutil activity
-Display system-wide disk manipulation activity as reported by the Disk
-Arbitration framework until interrupted with a signal (e.g. by typing
-Control-C).
-Root access is not required.
